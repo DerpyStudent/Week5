@@ -1,0 +1,13 @@
+/*
+
+1. A Class creates objects, and is not an object itself, similar to how a cookie cutter 
+  makes cookies, but is not a cookie itself.A Class creates a template of an object, that
+  can be reproduced many times, similar to how a cookie cutter creates multiple cookies 
+  of the same shape. A class provides guidelines similar to the rigid edges of a cookie cutter.
+
+2. Instance Variables are variables contained within each instance of an object, as opposed to regular variables 
+  which are not contained within objects.
+  
+3. 6 instances of ball are created.
+
+*/
