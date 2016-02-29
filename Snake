@@ -48,31 +48,28 @@ void draw() {
       xSegments[i] = xSegments[i-1];
       ySegments[i] = ySegments[i-1];
     }
-    if (isThereASegmentAtPosition(nextX, nextY)) {
       // snake hit itself! reset the game!
       setup();
-    } 
-      else {
+    } else if (xSegments[0]>=(width/gridSize)) {
+
+      setup();
+    } else if (xSegments[0]<=(0)) {
+
+      setup();
+    } else if (ySegments[0]>=(height/gridSize)) {
+      setup();
+    } else if (ySegments[0]<=0) {
+
+      setup();
+    } else if (nextY>=499) {
+      setup();
+    } else {
       xSegments[0] = nextX;
       ySegments[0] = nextY;
       if (nextX == foodX && nextY == foodY) {
         getFood();
       }
-      if (nextX<0) {
 
-        setup();
-      }
-      else if (nextY<1) {
-        setup();
-      }
-      else if (nextX<1) {
-        setup();
-      }
-      else if (nextX>499){
-        setup();
-      }
-      else if (nextY>599){
-      }
       //Wondering why all of the above lines did nothing except the first one
     }
   }
@@ -84,7 +81,7 @@ void getFood() {
   while (isThereASegmentAtPosition(foodX, foodY)) {
     foodX = floor(random(width/gridSize));
     foodY = floor(random(width/gridSize));
-  } 
+  }
 }
 
 boolean isThereASegmentAtPosition(int x, int y) {
